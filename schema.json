@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Har Analyzer",
+  "description": "HAR File Analyzer",
+  "properties": {
+    "log": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ]
+        },
+        "browser": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ]
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "startedDateTime": {
+                "format": "date-time"
+              },
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "comment": {
+                "type": "string"
+              },
+              "pageTimings": {
+                "type": "object",
+                "properties": {
+                  "onContentLoad": {
+                    "type": "number"
+                  },
+                  "onLoad": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                },
+                "required": []
+              }
+            },
+            "required": [
+              "startedDateTime",
+              "id",
+              "title",
+              "pageTimings"
+            ]
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pageref": {
+                "type": "string"
+              },
+              "startedDateTime": {
+                "format": "date-time"
+              },
+              "time": {
+                "type": "number"
+              },
+              "request": {
+                "type": "object",
+                "properties": {
+                  "method": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "httpVersion": {
+                    "type": "string"
+                  },
+                  "cookies": {
+                    "type": "array"
+                  },
+                  "headers": {
+                    "type": "array"
+                  },
+                  "queryString": {
+                    "type": "array"
+                  },
+                  "postData": {
+                    "type": "object"
+                  },
+                  "headersSize": {
+                    "type": "number"
+                  },
+                  "bodySize": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "method",
+                  "url",
+                  "httpVersion",
+                  "cookies",
+                  "headers",
+                  "queryString",
+                  "headersSize",
+                  "bodySize"
+                ]
+              },
+              "response": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "number"
+                  },
+                  "statusText": {
+                    "type": "string"
+                  },
+                  "httpVersion": {
+                    "type": "string"
+                  },
+                  "cookies": {
+                    "type": "array"
+                  },
+                  "headers": {
+                    "type": "array"
+                  },
+                  "content": {
+                    "type": "object"
+                  },
+                  "redirectURL": {
+                    "type": "string"
+                  },
+                  "headersSize": {
+                    "type": "number"
+                  },
+                  "bodySize": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "method",
+                  "url",
+                  "httpVersion",
+                  "cookies",
+                  "headers",
+                  "queryString",
+                  "headersSize",
+                  "bodySize"
+                ]
+              },
+              "cache": {
+                "type": "object"
+              },
+              "timings": {
+                "type": "object"
+              },
+              "serverIPAddress": {
+                "format": "ipv4"
+              },
+              "connection": {
+                "type": "string"
+              },
+              "comment": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "startedDateTime",
+              "time",
+              "request",
+              "response",
+              "cache",
+              "timings"
+            ]
+          }
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "creator",
+        "entries"
+      ]
+    }
+  }
+}
