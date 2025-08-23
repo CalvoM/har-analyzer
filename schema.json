@@ -114,16 +114,129 @@
                     "type": "string"
                   },
                   "cookies": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "path": {
+                          "type": "string"
+                        },
+                        "domain": {
+                          "type": "string"
+                        },
+                        "expires": {
+                          "type": "string"
+                        },
+                        "httpOnly": {
+                          "type": "boolean"
+                        },
+                        "secure": {
+                          "type": "boolean"
+                        },
+                        "comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ]
+                    }
                   },
                   "headers": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value",
+                        "comment"
+                      ]
+                    }
                   },
                   "queryString": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value",
+                        "comment"
+                      ]
+                    }
                   },
                   "postData": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                      "mimeType": {
+                        "type": "string"
+                      },
+                      "params": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "fileName": {
+                              "type": "string"
+                            },
+                            "contentType": {
+                              "type": "string"
+                            },
+                            "comment": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ]
+                        }
+                      },
+                      "text": {
+                        "type": "string"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "mimeType",
+                      "params",
+                      "text"
+                    ]
                   },
                   "headersSize": {
                     "type": "number"
@@ -159,13 +272,86 @@
                     "type": "string"
                   },
                   "cookies": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "path": {
+                          "type": "string"
+                        },
+                        "domain": {
+                          "type": "string"
+                        },
+                        "expires": {
+                          "type": "string"
+                        },
+                        "httpOnly": {
+                          "type": "boolean"
+                        },
+                        "secure": {
+                          "type": "boolean"
+                        },
+                        "comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ]
+                    }
                   },
                   "headers": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value",
+                        "comment"
+                      ]
+                    }
                   },
                   "content": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                      "size": {
+                        "type": "number"
+                      },
+                      "compression": {
+                        "type": "number"
+                      },
+                      "mimeType": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "size",
+                      "mimeType"
+                    ]
                   },
                   "redirectURL": {
                     "type": "string"
@@ -181,21 +367,111 @@
                   }
                 },
                 "required": [
-                  "method",
-                  "url",
+                  "status",
+                  "statusText",
                   "httpVersion",
                   "cookies",
                   "headers",
-                  "queryString",
+                  "content",
+                  "redirectURL",
                   "headersSize",
                   "bodySize"
                 ]
               },
               "cache": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "beforeRequest": {
+                    "type": "object",
+                    "properties": {
+                      "expires": {
+                        "type": "string"
+                      },
+                      "lastAccess": {
+                        "type": "string"
+                      },
+                      "eTag": {
+                        "type": "string"
+                      },
+                      "hitCount": {
+                        "type": "number"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "lastAccess",
+                      "eTag",
+                      "hitCount"
+                    ]
+                  },
+                  "afterRequest": {
+                    "type": "object",
+                    "properties": {
+                      "expires": {
+                        "type": "string"
+                      },
+                      "lastAccess": {
+                        "type": "string"
+                      },
+                      "eTag": {
+                        "type": "string"
+                      },
+                      "hitCount": {
+                        "type": "number"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "lastAccess",
+                      "eTag",
+                      "hitCount"
+                    ]
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                }
               },
               "timings": {
-                "type": "object"
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "blocked": {
+                    "type": "number"
+                  },
+                  "dns": {
+                    "type": "number"
+                  },
+                  "connect": {
+                    "type": "number"
+                  },
+                  "send": {
+                    "type": "number"
+                  },
+                  "wait": {
+                    "type": "number"
+                  },
+                  "receive": {
+                    "type": "number"
+                  },
+                  "ssl": {
+                    "type": "number"
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "send",
+                  "wait",
+                  "receive"
+                ]
               },
               "serverIPAddress": {
                 "format": "ipv4"
