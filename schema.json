@@ -22,11 +22,7 @@
             "comment": {
               "type": "string"
             }
-          },
-          "required": [
-            "name",
-            "version"
-          ]
+          }
         },
         "browser": {
           "type": "object",
@@ -40,11 +36,7 @@
             "comment": {
               "type": "string"
             }
-          },
-          "required": [
-            "name",
-            "version"
-          ]
+          }
         },
         "pages": {
           "type": "array",
@@ -75,16 +67,9 @@
                   "comment": {
                     "type": "string"
                   }
-                },
-                "required": []
+                }
               }
-            },
-            "required": [
-              "startedDateTime",
-              "id",
-              "title",
-              "pageTimings"
-            ]
+            }
           }
         },
         "entries": {
@@ -142,11 +127,7 @@
                         "comment": {
                           "type": "string"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "value"
-                      ]
+                      }
                     }
                   },
                   "headers": {
@@ -163,12 +144,7 @@
                         "comment": {
                           "type": "string"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "value",
-                        "comment"
-                      ]
+                      }
                     }
                   },
                   "queryString": {
@@ -185,12 +161,7 @@
                         "comment": {
                           "type": "string"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "value",
-                        "comment"
-                      ]
+                      }
                     }
                   },
                   "postData": {
@@ -219,10 +190,7 @@
                             "comment": {
                               "type": "string"
                             }
-                          },
-                          "required": [
-                            "name"
-                          ]
+                          }
                         }
                       },
                       "text": {
@@ -231,12 +199,7 @@
                       "comment": {
                         "type": "string"
                       }
-                    },
-                    "required": [
-                      "mimeType",
-                      "params",
-                      "text"
-                    ]
+                    }
                   },
                   "headersSize": {
                     "type": "number"
@@ -247,17 +210,7 @@
                   "comment": {
                     "type": "string"
                   }
-                },
-                "required": [
-                  "method",
-                  "url",
-                  "httpVersion",
-                  "cookies",
-                  "headers",
-                  "queryString",
-                  "headersSize",
-                  "bodySize"
-                ]
+                }
               },
               "response": {
                 "type": "object",
@@ -300,11 +253,7 @@
                         "comment": {
                           "type": "string"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "value"
-                      ]
+                      }
                     }
                   },
                   "headers": {
@@ -321,12 +270,7 @@
                         "comment": {
                           "type": "string"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "value",
-                        "comment"
-                      ]
+                      }
                     }
                   },
                   "content": {
@@ -347,11 +291,7 @@
                       "comment": {
                         "type": "string"
                       }
-                    },
-                    "required": [
-                      "size",
-                      "mimeType"
-                    ]
+                    }
                   },
                   "redirectURL": {
                     "type": "string"
@@ -365,24 +305,16 @@
                   "comment": {
                     "type": "string"
                   }
-                },
-                "required": [
-                  "status",
-                  "statusText",
-                  "httpVersion",
-                  "cookies",
-                  "headers",
-                  "content",
-                  "redirectURL",
-                  "headersSize",
-                  "bodySize"
-                ]
+                }
               },
               "cache": {
                 "type": "object",
                 "properties": {
                   "beforeRequest": {
-                    "type": "object",
+                    "type": [
+                      "object",
+                      "null"
+                    ],
                     "properties": {
                       "expires": {
                         "type": "string"
@@ -399,15 +331,13 @@
                       "comment": {
                         "type": "string"
                       }
-                    },
-                    "required": [
-                      "lastAccess",
-                      "eTag",
-                      "hitCount"
-                    ]
+                    }
                   },
                   "afterRequest": {
-                    "type": "object",
+                    "type": [
+                      "object",
+                      "null"
+                    ],
                     "properties": {
                       "expires": {
                         "type": "string"
@@ -424,12 +354,7 @@
                       "comment": {
                         "type": "string"
                       }
-                    },
-                    "required": [
-                      "lastAccess",
-                      "eTag",
-                      "hitCount"
-                    ]
+                    }
                   },
                   "comment": {
                     "type": "string"
@@ -466,12 +391,7 @@
                   "comment": {
                     "type": "string"
                   }
-                },
-                "required": [
-                  "send",
-                  "wait",
-                  "receive"
-                ]
+                }
               },
               "serverIPAddress": {
                 "format": "ipv4"
@@ -482,26 +402,13 @@
               "comment": {
                 "type": "string"
               }
-            },
-            "required": [
-              "startedDateTime",
-              "time",
-              "request",
-              "response",
-              "cache",
-              "timings"
-            ]
+            }
           }
         },
         "comment": {
           "type": "string"
         }
-      },
-      "required": [
-        "version",
-        "creator",
-        "entries"
-      ]
+      }
     }
   }
 }
