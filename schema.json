@@ -44,6 +44,7 @@
             "type": "object",
             "properties": {
               "startedDateTime": {
+                "type": "string",
                 "format": "date-time"
               },
               "id": {
@@ -81,6 +82,7 @@
                 "type": "string"
               },
               "startedDateTime": {
+                "type": "string",
                 "format": "date-time"
               },
               "time": {
@@ -362,39 +364,44 @@
                 }
               },
               "timings": {
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "properties": {
-                  "blocked": {
-                    "type": "number"
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {}
                   },
-                  "dns": {
-                    "type": "number"
-                  },
-                  "connect": {
-                    "type": "number"
-                  },
-                  "send": {
-                    "type": "number"
-                  },
-                  "wait": {
-                    "type": "number"
-                  },
-                  "receive": {
-                    "type": "number"
-                  },
-                  "ssl": {
-                    "type": "number"
-                  },
-                  "comment": {
-                    "type": "string"
+                  {
+                    "type": "object",
+                    "properties": {
+                      "blocked": {
+                        "type": "number"
+                      },
+                      "dns": {
+                        "type": "number"
+                      },
+                      "connect": {
+                        "type": "number"
+                      },
+                      "send": {
+                        "type": "number"
+                      },
+                      "wait": {
+                        "type": "number"
+                      },
+                      "receive": {
+                        "type": "number"
+                      },
+                      "ssl": {
+                        "type": "number"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    }
                   }
-                }
+                ]
               },
               "serverIPAddress": {
-                "format": "ipv4"
+                "type": "string"
               },
               "connection": {
                 "type": "string"
