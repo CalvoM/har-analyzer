@@ -19,6 +19,11 @@ def validate_schema_data(data: dict[str, Any]):
     jsonschema.validate(data, schema)
 
 
+def get_creator_details(creator_data: Any):
+    print(f"{creator_data.name}")
+    print(f"{creator_data.version}")
+
+
 def analyze(data: dict[str, Any]):
     try:
         validate_schema_data(data)
@@ -28,3 +33,4 @@ def analyze(data: dict[str, Any]):
     builder = pjs.ObjectBuilder(schema)
     HarAnalyzer = builder.build_classes(any_of="use-first").HarAnalyzer
     har_data = HarAnalyzer(log=data.get("log"))
+    get_creator_details(har_data.log.creator)
